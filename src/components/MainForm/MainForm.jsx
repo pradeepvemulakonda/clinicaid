@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex } from 'grid-styled';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import { media } from '../../helpers/styled-utils';
 import WizardComponent from '../WizardComponent/WizardComponent';
 
@@ -26,6 +26,10 @@ const WizardFormWrapper = styled(Flex)`
   `};
 `;
 
+const HeaderText = styled(Typography)`
+  flex-grow: 1;
+`;
+
 const FormContainer = styled(Flex)`
   background-color: #fff;
   width: 100%;
@@ -33,32 +37,17 @@ const FormContainer = styled(Flex)`
   align-items: center;
 `;
 
-const Header = styled.text`
-  width: 100%;
-  text-align: center;
-`;
-
 const MainForm = props => {
-  const { header, customer, page } = props;
+  const { header } = props;
   return (
     <ApplicationWrapper name="ApplicationContainer">
       <Flex column align="flex-start" justify="flex-start" w={1}>
         <WizardFormWrapper name="WizardFormContainer">
           <FormContainer>
-            <Header brand size={5} is="h4">
-              <div>
-                {page === 1 &&
-                  customer.name &&
-                  `Welcome ${customer.name.firstName}`}
-              </div>
-              <AppBar position="static" color="default">
-                <Toolbar>
-                  <Typography variant="title" color="inherit">
-                    <div>{header}</div>
-                  </Typography>
-                </Toolbar>
-              </AppBar>
-            </Header>
+            <HeaderText variant="title" color="inherit">
+              <div>{header}</div>
+            </HeaderText>
+            <Button color="inherit">Login</Button>
             <WizardComponent {...props} />
           </FormContainer>
         </WizardFormWrapper>
@@ -68,13 +57,11 @@ const MainForm = props => {
 };
 
 MainForm.propTypes = {
-  header: PropTypes.string.isRequired,
-  page: PropTypes.string.isRequired,
-  customer: PropTypes.instanceOf(Object),
+  header: PropTypes.string,
 };
 
 MainForm.defaultProps = {
-  customer: {},
+  header: '',
 };
 
 export default MainForm;

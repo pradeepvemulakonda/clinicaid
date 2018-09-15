@@ -7,7 +7,7 @@ const BooleanRadioComponent = validate =>
     <ButtonGroup
       name={`${props.label} radios`}
       label={props.label}
-      alertType={validate(props.meta.touched, props.meta.error)}
+      error={validate(props.meta.touched, props.meta.error)}
       block
       styling="hero"
     >

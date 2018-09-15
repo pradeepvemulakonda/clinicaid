@@ -55,7 +55,7 @@ const AmountFrequency = ({
     <InputField
       {...rest}
       placeholder={label}
-      alertType={validate(touched, error)}
+      error={validate(touched, error)}
       type={type}
     />
     <SelectWrapper>

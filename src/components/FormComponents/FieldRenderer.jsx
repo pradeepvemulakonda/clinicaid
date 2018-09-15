@@ -6,33 +6,26 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MdWarning } from 'react-icons/md';
-import { Label } from 'react-bootstrap';
 import { media } from '../../helpers/styled-utils';
 
 const FieldContainer = styled.div`
   margin-left: 1rem;
   margin-right: 1rem;
+  justify-content: center;
   ${media.forTabletPortraitAndUp`
     display: flex;
-    flex: 0 1 auto;
-    margin-left: 10%;
-    margin-right: 30%;
+    flex: 1 0 auto;
+    max-width: 30rem;
+    margin: auto;
   `};
 `;
 
 const FieldInputContainer = styled.div`
+  & > * {
+    width: 100%;
+  }
   ${media.forTabletPortraitAndUp`
-    flex-basis: 0;
-    flex-grow: 1;
-  `};
-`;
-
-const FieldLabel = styled(Label)`
-  ${media.forTabletPortraitAndUp`
-    text-align: right;
-    margin-right: 1rem;
-    flex-basis: 0;
-    flex-grow: 1;
+    flex: 1 0 auto;
   `};
 `;
 
@@ -57,11 +50,8 @@ const FieldFragment = render => props => {
   const { input, label, meta } = props;
   return (
     <React.Fragment>
-      <FieldContainer>
-        <FieldInputContainer
-          responsiveMarginTop={{ xs: 3, sm: 2, md: 2, lg: 3 }}
-          responsiveMarginBottom={{ xs: 3, sm: 2, md: 2, lg: 3 }}
-        >
+      <FieldContainer name="FieldContainer">
+        <FieldInputContainer name="FieldInputContainer">
           {render(props)}
           <FieldError>
             {meta.touched &&

@@ -28,17 +28,18 @@ const FieldInputContainer = styled.div`
     flex-grow: 1;
     display: flex;
     margin: auto;
-  `}
+  `};
 `;
 
-const FieldFragment = render => props =>
+const FieldFragment = render => props => (
   <React.Fragment>
     <FieldContainer>
       <FieldInputContainer name="FieldInputContainer">
         {render(props)}
       </FieldInputContainer>
     </FieldContainer>
-  </React.Fragment>;
+  </React.Fragment>
+);
 
 const FieldRenderer = render => FieldFragment(render);
 

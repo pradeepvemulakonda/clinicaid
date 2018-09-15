@@ -42,11 +42,8 @@ const NavigationButtons = ({
       <div>
         {displayPrev && (
           <NavigationButton
-            block
-            soft
             variant="contained"
             color="primary"
-            inputType="submit"
             onClick={previousAction}
           >
             {previousLabel}
@@ -55,12 +52,7 @@ const NavigationButtons = ({
       </div>
       <div>
         {displayNext && (
-          <NavigationButton
-            block
-            variant="contained"
-            color="primary"
-            inputType="submit"
-          >
+          <NavigationButton variant="contained" color="primary">
             {nextLabel}
           </NavigationButton>
         )}

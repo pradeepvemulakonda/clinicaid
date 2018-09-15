@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
+import { compose } from 'recompose';
 import { appActions } from '../../redux/modules/app.module';
 import { customerActions } from '../../redux/modules/customer.module';
 import { getPageState } from '../../redux/selectors/page.selector';
@@ -11,16 +11,6 @@ import { getAdditionalLoanPurposeCount } from '../../redux/selectors/additionalL
 import { MainForm } from '../../components/MainForm';
 
 class ApplicationContainer extends React.Component {
-  static propTypes = {
-    fetchPageFromPath: PropTypes.func.isRequired,
-    match: {
-      params: {
-        page: PropTypes.string.isRequired,
-      }.isRequired,
-    }.isRequired,
-    loadCustomer: PropTypes.func.isRequired,
-  };
-
   componentDidMount() {
     const { fetchPageFromPath, loadCustomer, match } = this.props;
     fetchPageFromPath(match.params.page);
@@ -56,9 +46,12 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export default withRouter(
+const enhance = compose(
+  withRouter,
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(ApplicationContainer)
+  )
 );
+
+export default enhance(ApplicationContainer);

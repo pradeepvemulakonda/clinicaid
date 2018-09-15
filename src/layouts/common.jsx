@@ -6,6 +6,7 @@ export const Container = styled(Well)`
   display: flex;
   width: 100%;
   justify-content: center;
+  margin: 1em;
 `;
 
 export const Backdrop = styled.div`

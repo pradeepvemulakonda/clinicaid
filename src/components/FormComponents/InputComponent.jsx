@@ -2,14 +2,13 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import FieldRenderer from './FieldRenderer';
 
-const InputComponent = validate =>
+const InputComponent = () =>
   FieldRenderer(props => (
     <TextField
-      error={props.meta.touched && props.meta.error}
       {...props.input}
       {...props}
       placeholder={props.label}
-      alertType={validate(props.meta.touched, props.meta.error)}
+      error={props.meta.invalid && props.meta.touched}
       type={props.type}
     />
   ));

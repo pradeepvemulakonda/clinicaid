@@ -9,7 +9,7 @@ const InputGroupComponent = validate =>
       prefix="$"
       type={props.type}
       placeholder={props.label}
-      alertType={validate(props.meta.touched, props.meta.error)}
+      error={validate(props.meta.touched, props.meta.error)}
       block
     />
   ));

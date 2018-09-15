@@ -6,7 +6,6 @@ import { media } from '../../helpers/styled-utils';
 
 const ButtonField = styled(Button)`
   width: 100%;
-
   ${media.forTabletPortraitAndUp`
     width: auto;
     justify-content: space-between;
@@ -27,7 +26,7 @@ const AddButtonComponent = validate =>
       onClick={onClick}
       iconPosition="left"
       iconProps={{ size: 'medium' }}
-      alertType={validate(touched, error)}
+      error={validate(touched, error)}
     />
   ));
 

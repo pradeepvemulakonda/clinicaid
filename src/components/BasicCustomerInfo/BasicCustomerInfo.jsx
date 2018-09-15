@@ -6,12 +6,7 @@ import { Form } from '../../layouts/common';
 import NavigationButtons from '../FormComponents/NavigationButtonsComponent';
 import InputComponent from '../FormComponents/InputComponent';
 
-export const determineValidation = (touched, error) => {
-  if (touched && error) return 'danger';
-  return null;
-};
-
-const InputField = InputComponent(determineValidation);
+const InputField = InputComponent();
 
 const BasicCustomerInfo = props => {
   const { handleSubmit } = props;

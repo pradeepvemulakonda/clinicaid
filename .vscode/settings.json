@@ -1,5 +1,20 @@
 {
-    "files.eol": "\n",
-    "editor.formatOnSave": true,
-    "prettier.eslintIntegration": true
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": true,
+  "telemetry.enableTelemetry": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "java.home": "/usr/lib64/jvm/java-10-openjdk-10",
+  "files.autoSave": "afterDelay",
+  "javascript.format.enable": false,
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": true,
+  "prettier.singleQuote": true,
+  "prettier.stylelintIntegration": true,
+  "prettier.trailingComma": "es5",
+  "prettier.requireConfig": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "typescript.autoClosingTags": false
 }

@@ -17,7 +17,7 @@ export const ErrorContainer = styled(Flex)`
 `;
 
 const Error = () => (
-  <Container column flex="1 0 auto">
+  <Container>
     <Backdrop align="center" justify="flex-start" p={40} column>
       <ErrorContainer>
         <h1>404 - Page Not Found</h1>
