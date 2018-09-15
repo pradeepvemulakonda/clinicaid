@@ -44,11 +44,11 @@ const FieldError = styled.div`
 `;
 
 const ErrorIcon = styled(MdWarning)`
-  color: ${({ theme }) => theme.color.danger};
+  color: red;
   margin-bottom: 3px;
 `;
 
-const ErrorText = styled(Text)`
+const ErrorText = styled.text`
   display: inline;
   margin-left: 6px;
 `;
@@ -58,14 +58,6 @@ const FieldFragment = render => props => {
   return (
     <React.Fragment>
       <FieldContainer>
-        <FieldLabel
-          htmlFor={input.name}
-          for={input.name}
-          responsiveMarginTop={{ xs: 3, sm: 2, md: 2, lg: 3 }}
-          responsiveMarginBottom={{ xs: 3, sm: 2, md: 2, lg: 3 }}
-        >
-          {label}
-        </FieldLabel>
         <FieldInputContainer
           responsiveMarginTop={{ xs: 3, sm: 2, md: 2, lg: 3 }}
           responsiveMarginBottom={{ xs: 3, sm: 2, md: 2, lg: 3 }}
@@ -73,13 +65,12 @@ const FieldFragment = render => props => {
           {render(props)}
           <FieldError>
             {meta.touched &&
-              (meta.error &&
+              (meta.error && (
                 <div>
-                  <ErrorIcon size="xsmall" />
-                  <ErrorText styling="danger">
-                    {meta.error}
-                  </ErrorText>
-                </div>)}
+                  <ErrorIcon size="20px" />
+                  <ErrorText>{meta.error}</ErrorText>
+                </div>
+              ))}
           </FieldError>
         </FieldInputContainer>
       </FieldContainer>

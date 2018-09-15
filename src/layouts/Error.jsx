@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Flex } from 'grid-styled';
-import { Button } from 'react-bootstrap';
+import { Button } from '@material-ui/core/Button';
 import { Container, Backdrop } from './common';
 
 export const ErrorContainer = styled(Flex)`
-  border: 1px ${({ theme }) => theme.color.border} solid;
+  border: 1px red solid;
   border-radius: 3px;
   background-color: #fff;
   width: 100%;
@@ -16,7 +16,7 @@ export const ErrorContainer = styled(Flex)`
   align-items: center;
 `;
 
-const Error = () =>
+const Error = () => (
   <Container column flex="1 0 auto">
     <Backdrop align="center" justify="flex-start" p={40} column>
       <ErrorContainer>
@@ -24,6 +24,7 @@ const Error = () =>
         <Button to="/" label="Home" />
       </ErrorContainer>
     </Backdrop>
-  </Container>;
+  </Container>
+);
 
 export default Error;

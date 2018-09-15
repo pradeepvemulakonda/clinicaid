@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import Button from '@material-ui/core/Button';
 import ButtonRenderer from './ButtonRenderer';
 import { media } from '../../helpers/styled-utils';
 
@@ -17,7 +17,7 @@ const ButtonField = styled(Button)`
 `;
 
 const AddButtonComponent = validate =>
-  ButtonRenderer(({ label, type, touched, error, onClick, disabled }) =>
+  ButtonRenderer(({ label, type, touched, error, onClick, disabled }) => (
     <ButtonField
       soft
       styling="hero"
@@ -29,6 +29,6 @@ const AddButtonComponent = validate =>
       iconProps={{ size: 'medium' }}
       alertType={validate(touched, error)}
     />
-  );
+  ));
 
 export default AddButtonComponent;

@@ -4,10 +4,10 @@ import AmountFrequency from './AmountFrequencyComponent';
 import { OptionsComponent } from './OptionsComponent';
 
 const InputAndSelectBoxComponent = (validate, options) =>
-  FieldRenderer(props =>
+  FieldRenderer(props => (
     <AmountFrequency {...props.input} validate={validate}>
       {OptionsComponent(options)}
     </AmountFrequency>
-  );
+  ));
 
 export default InputAndSelectBoxComponent;

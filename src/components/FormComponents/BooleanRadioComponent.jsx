@@ -3,7 +3,7 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 import FieldRenderer from './FieldRenderer';
 
 const BooleanRadioComponent = validate =>
-  FieldRenderer(props =>
+  FieldRenderer(props => (
     <ButtonGroup
       name={`${props.label} radios`}
       label={props.label}
@@ -30,6 +30,6 @@ const BooleanRadioComponent = validate =>
         }}
       />
     </ButtonGroup>
-  );
+  ));
 
 export default BooleanRadioComponent;

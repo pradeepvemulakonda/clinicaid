@@ -3,7 +3,7 @@ import { InputGroup } from 'react-bootstrap';
 import FieldRenderer from './FieldRenderer';
 
 const InputGroupComponent = validate =>
-  FieldRenderer(props =>
+  FieldRenderer(props => (
     <InputGroup
       {...props.input}
       prefix="$"
@@ -12,6 +12,6 @@ const InputGroupComponent = validate =>
       alertType={validate(props.meta.touched, props.meta.error)}
       block
     />
-  );
+  ));
 
 export default InputGroupComponent;

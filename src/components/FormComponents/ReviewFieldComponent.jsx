@@ -22,7 +22,7 @@ const FieldContainer = styled.div`
   `};
 `;
 
-const TextField = styled(Text)`
+const TextField = styled.text`
   text-align: center;
   margin: auto;
   text-transform: uppercase;
@@ -81,7 +81,7 @@ const ReviewFieldComponent = ({ content, label, history }) => {
         >
           {label.toString()}
         </TextField>
-        {contentArray.map(dataItem =>
+        {contentArray.map(dataItem => (
           <FieldContainer>
             <FieldLabel
               responsiveMarginTop={{ xs: 3, sm: 2, md: 2, lg: 3 }}
@@ -96,7 +96,7 @@ const ReviewFieldComponent = ({ content, label, history }) => {
               {dataItem.value.toString()}
             </FieldInputContainer>
           </FieldContainer>
-        )}
+        ))}
       </WellField>
     </React.Fragment>
   );
@@ -105,7 +105,7 @@ const ReviewFieldComponent = ({ content, label, history }) => {
 ReviewFieldComponent.propTypes = {
   content: PropTypes.instanceOf(Object).isRequired,
   label: PropTypes.string.isRequired,
-  history: PropTypes.instanceOf(Object).isRequired
+  history: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default withRouter(ReviewFieldComponent);

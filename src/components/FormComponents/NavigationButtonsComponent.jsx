@@ -6,7 +6,7 @@
 import { Flex } from 'grid-styled';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
+import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import { media } from '../../helpers/styled-utils';
 
@@ -36,38 +36,45 @@ const NavigationButtons = ({
   displayNext,
   displayPrev,
   ...rest
-}) =>
+}) => (
   <React.Fragment>
     <FieldContainer name="FieldContainer" {...rest}>
       <div>
-        {displayPrev &&
+        {displayPrev && (
           <NavigationButton
             block
             soft
-            styling="primary"
-            label={previousLabel}
+            variant="contained"
+            color="primary"
             inputType="submit"
             onClick={previousAction}
-          />}
+          >
+            {previousLabel}
+          </NavigationButton>
+        )}
       </div>
       <div>
-        {displayNext &&
+        {displayNext && (
           <NavigationButton
             block
-            styling="primary"
-            label={nextLabel}
+            variant="contained"
+            color="primary"
             inputType="submit"
-          />}
+          >
+            {nextLabel}
+          </NavigationButton>
+        )}
       </div>
     </FieldContainer>
-  </React.Fragment>;
+  </React.Fragment>
+);
 
 NavigationButtons.defaultProps = {
   displayNext: true,
   displayPrev: true,
   previousAction: undefined,
   nextLabel: 'next',
-  previousLabel: 'previous'
+  previousLabel: 'previous',
 };
 
 NavigationButtons.propTypes = {
@@ -76,7 +83,7 @@ NavigationButtons.propTypes = {
   previousLabel: PropTypes.string,
   previousAction: PropTypes.func,
   displayNext: PropTypes.bool,
-  displayPrev: PropTypes.bool
+  displayPrev: PropTypes.bool,
 };
 
 export default NavigationButtons;

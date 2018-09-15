@@ -44,11 +44,11 @@ const BasicCustomerInfo = props => {
 };
 
 BasicCustomerInfo.propTypes = {
-  handleSubmit: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 export default reduxForm({
   form: 'personalLoan',
   destroyOnUnmount: false, // <------ preserve form data
-  forceUnregisterOnUnmount: true // <------ unregister fields on unmount
+  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
 })(BasicCustomerInfo);

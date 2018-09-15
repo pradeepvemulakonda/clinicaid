@@ -1,8 +1,9 @@
 import { Flex } from 'grid-styled';
 import React from 'react';
-import { Input } from 'react-bootstrap';
+import Select from 'react-select';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Input from './Input';
 
 const InputAddon = styled(Flex)``;
 
@@ -73,4 +74,4 @@ AmountFrequency.propTypes = {
   error: PropTypes.bool.isRequired,
 };
 
-export default withAccessibleFocusStyle(AmountFrequency);
+export default AmountFrequency;
