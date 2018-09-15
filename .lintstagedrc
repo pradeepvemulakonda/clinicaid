@@ -1,0 +1,7 @@
+{
+    "{src}/**/*.{js,jsx}": [
+        "stylelint",
+        "prettier --write",
+        "cross-env CI=true react-scripts test --env=jsdom --findRelatedTests"
+    ],
+}

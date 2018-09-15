@@ -1,0 +1,29 @@
+{
+  "extends": ["airbnb", "plugin:prettier/recommended", "prettier"],
+  "plugins": ["babel", "import", "jsx-a11y", "react", "prettier"],
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "jest": true
+  },
+  "globals": {
+    "$": true,
+    "browser": true,
+    "spyOn": true
+  },
+  "rules": {
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+
+    "react/no-danger": 2,
+    "react/no-direct-mutation-state": 2,
+    "react/jsx-wrap-multilines": 0,
+
+    "lines-between-class-members": 2,
+    "prettier/prettier": ["error", { "singleQuote": true }]
+  }
+}
