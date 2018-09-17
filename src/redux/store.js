@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
+import logger from 'redux-logger';
 
 // import the rootReducer which we initialise our store with.
 import rootReducer from './rootReducer';
@@ -14,7 +15,7 @@ const defaultState = {};
 
 // Add any middleware here for it to be applied to the store.
 // Note that the order of the middleware is important here.
-const middlewares = [sagaMiddleware];
+const middlewares = [sagaMiddleware, logger];
 
 const store = createStore(
   rootReducer,

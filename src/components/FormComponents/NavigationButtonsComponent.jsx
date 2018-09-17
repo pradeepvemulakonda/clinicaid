@@ -52,7 +52,7 @@ const NavigationButtons = ({
       </div>
       <div>
         {displayNext && (
-          <NavigationButton variant="contained" color="primary">
+          <NavigationButton variant="contained" color="primary" type="submit">
             {nextLabel}
           </NavigationButton>
         )}

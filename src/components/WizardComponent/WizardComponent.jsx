@@ -19,7 +19,7 @@ const WizardComponent = ({ page, history, ...rest }) => {
 
 WizardComponent.propTypes = {
   page: PropTypes.number.isRequired,
-  history: PropTypes.instanceOf(Object).isRequired
+  history: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default WizardComponent;
