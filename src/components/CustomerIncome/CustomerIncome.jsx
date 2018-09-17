@@ -14,40 +14,40 @@ export const determineValidation = (touched, error) => {
 
 const housingSituationOptions = [
   {
-    key: 'select',
-    value: '1'
+    label: 'select',
+    value: '1',
   },
   {
-    key: 'Renting',
-    value: '2'
+    label: 'Renting',
+    value: '2',
   },
   {
-    key: 'Owns Outright(No Mortgage)',
-    value: '3'
+    label: 'Owns Outright(No Mortgage)',
+    value: '3',
   },
   {
-    key: 'Boarding/Living with Parents',
-    value: '4'
-  }
+    label: 'Boarding/Living with Parents',
+    value: '4',
+  },
 ];
 
 const frequencyOptions = [
   {
-    key: 'Monthly',
-    value: '1'
+    label: 'Monthly',
+    value: '1',
   },
   {
-    key: 'Weekly',
-    value: '2'
+    label: 'Weekly',
+    value: '2',
   },
   {
-    key: 'Fortnightly',
-    value: '3'
+    label: 'Fortnightly',
+    value: '3',
   },
   {
-    key: 'Annually',
-    value: '4'
-  }
+    label: 'Annually',
+    value: '4',
+  },
 ];
 
 const SelectField = SelectComponent(housingSituationOptions);
@@ -88,11 +88,11 @@ const CustomerIncome = props => {
 
 CustomerIncome.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  previousPage: PropTypes.func.isRequired
+  previousPage: PropTypes.func.isRequired,
 };
 
 export default reduxForm({
   form: 'personalLoan',
   destroyOnUnmount: false, // <------ preserve form data
-  forceUnregisterOnUnmount: true // <------ unregister fields on unmount
+  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
 })(CustomerIncome);

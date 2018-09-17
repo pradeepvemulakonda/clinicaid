@@ -3,12 +3,6 @@ import Select from 'react-select';
 import FieldRenderer from './FieldRenderer';
 
 const SelectComponent = options =>
-  FieldRenderer(props => (
-    <Select block {...props.input}>
-      {options.map(option => (
-        <option value={option.value}>{option.key}</option>
-      ))}
-    </Select>
-  ));
+  FieldRenderer(props => <Select block {...props.input} options={options} />);
 
 export default SelectComponent;

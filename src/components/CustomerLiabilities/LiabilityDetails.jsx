@@ -12,25 +12,23 @@ export const determineValidation = (touched, error) => {
   return null;
 };
 
-const InputGroupField = InputGroupComponent(determineValidation);
-
 const frequencyOptions = [
   {
-    key: 'Monthly',
-    value: '1'
+    label: 'Monthly',
+    value: '1',
   },
   {
-    key: 'Weekly',
-    value: '2'
+    label: 'Weekly',
+    value: '2',
   },
   {
-    key: 'Fortnightly',
-    value: '3'
+    label: 'Fortnightly',
+    value: '3',
   },
   {
-    key: 'Annually',
-    value: '4'
-  }
+    label: 'Annually',
+    value: '4',
+  },
 ];
 
 const InputAndSelectBox = InputAndSelectBoxComponent(
@@ -38,7 +36,7 @@ const InputAndSelectBox = InputAndSelectBoxComponent(
   frequencyOptions
 );
 
-const LiabilityDetails = ({ labelLiability, labelOwing, ...rest }) =>
+const LiabilityDetails = ({ labelLiability, labelOwing, ...rest }) => (
   <Well>
     <Field
       name={`liabilities.${labelLiability}`}
@@ -53,14 +51,15 @@ const LiabilityDetails = ({ labelLiability, labelOwing, ...rest }) =>
       type="text"
       {...rest}
       label={labelOwing}
-      component={InputGroupField}
+      component={InputGroupComponent}
       validate={[required, minLength(2), number]}
     />
-  </Well>;
+  </Well>
+);
 
 LiabilityDetails.propTypes = {
   labelLiability: PropTypes.string.isRequired,
-  labelOwing: PropTypes.string.isRequired
+  labelOwing: PropTypes.string.isRequired,
 };
 
 export default LiabilityDetails;

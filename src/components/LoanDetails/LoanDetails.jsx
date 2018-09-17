@@ -4,10 +4,8 @@ import PropTypes from 'prop-types';
 import { required, number, minLength } from '../../helpers/validationHelpers';
 import { Form } from '../../layouts/common';
 import NavigationButtons from '../FormComponents/NavigationButtonsComponent';
-import AdditionalLoanPurpose, {
-  SelectField,
-  InputGroupField
-} from './AdditionalLoanPurpose';
+import AdditionalLoanPurpose, { SelectField } from './AdditionalLoanPurpose';
+import InputGroupComponent from '../FormComponents/InputGroupComponent';
 
 const LoanDetails = props => {
   const { handleSubmit, previousPage } = props;
@@ -25,7 +23,7 @@ const LoanDetails = props => {
         name="loan.amount"
         type="text"
         label="Amount"
-        component={InputGroupField}
+        component={InputGroupComponent}
         validate={[required, number, minLength(4)]}
       />
       <FieldArray name="members" component={AdditionalLoanPurpose} />
@@ -42,11 +40,11 @@ const LoanDetails = props => {
 
 LoanDetails.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  previousPage: PropTypes.func.isRequired
+  previousPage: PropTypes.func.isRequired,
 };
 
 export default reduxForm({
   form: 'personalLoan',
   destroyOnUnmount: false, // <------ preserve form data
-  forceUnregisterOnUnmount: true // <------ unregister fields on unmount
+  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
 })(LoanDetails);

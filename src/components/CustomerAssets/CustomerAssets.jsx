@@ -11,8 +11,6 @@ export const determineValidation = (touched, error) => {
   return null;
 };
 
-const InputGroup = InputGroupComponent(determineValidation);
-
 const CustomerFinances = props => {
   const { handleSubmit, previousPage } = props;
   return (
@@ -21,21 +19,21 @@ const CustomerFinances = props => {
         name="assets.assetsProperties"
         type="text"
         label="Total Market value of all properties"
-        component={InputGroup}
+        component={InputGroupComponent}
         validate={[required]}
       />
       <Field
         name="assets.otherAssets"
         type="text"
         label="Other assets(if any)"
-        component={InputGroup}
+        component={InputGroupComponent}
         validate={[required]}
       />
       <Field
         name="assets.totalBalanceInSavings"
         type="text"
         label="Total balances in savings / investment accounts (if any)"
-        component={InputGroup}
+        component={InputGroupComponent}
         validate={[required]}
       />
       <Field

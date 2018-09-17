@@ -17,21 +17,19 @@ export const determineValidation = (touched, error) => {
 
 const AddButtonField = AddButtonComponent(determineValidation);
 
-export const InputGroupField = InputGroupComponent(determineValidation);
-
 const loanPurposeOptions = [
   {
-    key: 'New Car',
-    value: 'value1'
+    label: 'New Car',
+    value: 'value1',
   },
   {
-    key: 'Used Car',
-    value: 'value2'
+    label: 'Used Car',
+    value: 'value2',
   },
   {
-    key: 'Motorbike',
-    value: 'value2'
-  }
+    label: 'Motorbike',
+    value: 'value2',
+  },
 ];
 
 export const SelectField = SelectComponent(loanPurposeOptions);
@@ -40,9 +38,9 @@ const List = styled.div`
   list-style: none;
 `;
 
-const AdditionalLoanPurpose = ({ fields, meta: { error, submitFailed } }) =>
+const AdditionalLoanPurpose = ({ fields, meta: { error, submitFailed } }) => (
   <div>
-    {fields.map((loanPurpose, index) =>
+    {fields.map((loanPurpose, index) => (
       <List key={index}>
         <Well>
           <MdClose
@@ -60,12 +58,12 @@ const AdditionalLoanPurpose = ({ fields, meta: { error, submitFailed } }) =>
             name={`loan.${loanPurpose}.amount`}
             type="text"
             label="Amount"
-            component={InputGroupField}
+            component={InputGroupComponent}
             validate={[required, number, minLength(4)]}
           />
         </Well>
       </List>
-    )}
+    ))}
     <List>
       <Field
         name="loan.addAnotherPurpose"
@@ -75,17 +73,14 @@ const AdditionalLoanPurpose = ({ fields, meta: { error, submitFailed } }) =>
         type="button"
         disabled={fields.length > 3}
       />
-      {submitFailed &&
-        error &&
-        <span>
-          {error}
-        </span>}
+      {submitFailed && error && <span>{error}</span>}
     </List>
-  </div>;
+  </div>
+);
 
 AdditionalLoanPurpose.propTypes = {
   fields: PropTypes.instanceOf(Array).isRequired,
-  meta: PropTypes.instanceOf(Object).isRequired
+  meta: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default AdditionalLoanPurpose;
